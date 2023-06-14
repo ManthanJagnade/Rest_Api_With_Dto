@@ -27,7 +27,7 @@ constructor(private readonly usersService: UsersService) {}
   //this is my one more get method this get method call a particular data findById in the UsersController class which retrieves a user by their id using the id parameter from the request body and calling the findById method of the usersService instance 
 
   @Get(':id')
-  async findById(@Query('id') id: string): Promise<User> {
+  async findById(@Param('id') id: string): Promise<User> {
     return this.usersService.findById(id);
   }
 
